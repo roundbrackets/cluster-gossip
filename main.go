@@ -10,7 +10,11 @@ import (
 
 func main() {
 
-	client, err := MakeClient(true)
+	client, err := MakeClient(ClientOpts{ClientType: CommandLine})
+	if err != nil {
+		fmt.Printf("Error encountered: %v\n", err)
+		return
+	}
 
 	namespaces, err := client.Namespaces().List(context.TODO(), metav1.ListOptions{})
 	if err != nil {
