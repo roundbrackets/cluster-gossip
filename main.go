@@ -6,12 +6,12 @@ import (
 	"strings"
 
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
-	"github.com/roundbrackets/cluster-gossip/client"
+	c "github.com/roundbrackets/cluster-gossip/client"
 )
 
 func main() {
 
-	client, err := MakeClient(ClientOpts{ClientType: CommandLine})
+	client, err := c.MakeClient(c.ClientOpts{ClientType: c.CommandLine})
 	if err != nil {
 		fmt.Printf("Error encountered: %v\n", err)
 		return
