@@ -25,6 +25,8 @@ func main() {
 	}
 }
 
+// we want it to listen to namespaces
+
 type Event struct {
 	namespace string
 	podCnt int
